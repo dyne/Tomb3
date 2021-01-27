@@ -16,47 +16,24 @@
 
 ### TODO import from v2
 
-*** [#A] integrate the zenroom for custom crypto functions
-	https://decodeproject.github.io/lua-zenroom
+- adopt [zenroom](https://zenroom.org) for crypto functions on keys
 
-*** [#A] study cryptsetup 2.0 and integrate it
+- adopt tc-play for crypto functions on filesystems
 
-	In particular kernel keystore functionalities
+- support BtrFS and snapshots
 
-*** [#A] support BtrFS and snapshots
-*** [#B] modular encryption system support
+- export header along with key
 
-    to go beyond dm-crypt/cryptsetup
+- desktop integration i.e udev rules to avoid usb automount
 
-    ecryptfs, tc-play
+- interactive verification of tomb's executable integrity
 
-    needs tomb marks appended at end of tombs
+- system to split passwords in parts (lagrange interpolation in Zenroom)
 
-*** [#B] udev rules to avoid usb automount of keyplug in gnome
+- API and docs for graphical GUIs (optional, contributed)
 
-*** [#B] sign and verify tomb script integrity
+- use mlock(2) etc. for key creation, see [this article](https://eklitzke.org/mlock-and-mlockall)
 
-*** [#B] analyse and show tomb entropy using libdisorder
+- improve steganography with outguess
 
-*** [#B] use inotify on tomb
-    inotify can also count when was the last time tomb was used and
-    unmount it automatically after a timeout, see how much free space
-    is left and warn when the space is almost finished
-
-*** DONE [#A] system to split passwords in parts
-	CLOSED: [2018-01-03 Wed 19:48]
-
-	solved with secrets.dyne.org
-	
-*** DONE [#B] make a graphical tomb undertaker (gnome-druid in glade?)
-	CLOSED: [2018-01-03 Wed 19:49]
-
-	solved by gtomb and qtomb
-
-*** use mlock(2) etc. for key creation
-
-See https://eklitzke.org/mlock-and-mlockall
-
-*** improve steganography with outguess
-
-*** improve creation speed with fallocate(1)
+- improve creation speed with fallocate(1)
